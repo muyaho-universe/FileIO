@@ -7,13 +7,16 @@ import java.io.*;
  */
 public class UsingBufferedReader {
     public static void main(String[] args) throws IOException {
-
-
+    	String fileName = args[0];
+    	String FileName1MB = fileName + "1MB";
+    	String FileName10MB = fileName + "10MB";
+    	String FileName100MB = fileName + "100MB";
+    	String FileName1000MB = fileName + "1000MB";
         //-------------- Test reading 1 MB file. --------------------
 
         StopWatch.start();
 
-        BufferedReader inputStream= new BufferedReader(new FileReader(DumpDataWriter.input1MB));
+        BufferedReader inputStream= new BufferedReader(new FileReader(FileName1MB));
         while (inputStream.read()!=-1){}
 
         long duration = StopWatch.stop();
@@ -26,7 +29,7 @@ public class UsingBufferedReader {
 
         StopWatch.start();
 
-        BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input10MB));
+        BufferedReader inputStream2= new BufferedReader(new FileReader(FileName10MB));
         while (inputStream2.read()!=-1){}
 
         long duration2 = StopWatch.stop();
@@ -39,7 +42,7 @@ public class UsingBufferedReader {
 
         StopWatch.start();
 
-        BufferedReader inputStream3= new BufferedReader(new FileReader(DumpDataWriter.input100MB));
+        BufferedReader inputStream3= new BufferedReader(new FileReader(FileName100MB));
         while (inputStream3.read()!=-1){}
 
         long duration3 = StopWatch.stop();
@@ -53,7 +56,7 @@ public class UsingBufferedReader {
 
         StopWatch.start();
 
-        BufferedReader inputStream4= new BufferedReader(new FileReader(DumpDataWriter.input1000MB));
+        BufferedReader inputStream4= new BufferedReader(new FileReader(FileName1000MB));
         while (inputStream4.read()!=-1){}
 
         long duration4 = StopWatch.stop();
